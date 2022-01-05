@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML lang="ja">
+<HEAD>
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html;  CHARSET=EUC-jp">
+  <TITLE>画像工学特論</TITLE>
+  <LINK REV="made" HREF="mailto:tom@qe.eng.hokudai.ac.jp">
+  <LINK REL="start" HREF="../../">
+</HEAD>
+<BODY>
+<H1>[課題] １次元データのフーリエ変換</H1>
+<pre>
+以下の(1)から(3)について、レポートにまとめなさい。
+</pre>
+<H2>(1) DFT</H2>
+<pre>
+  次の三つの一次元データ(データ形式は後述)を離散フーリエ変換をし、
+  これらの結果を比較せよ。 (DFTの結果は複素数になることに注意)
+  なお、DFT を FFT に置き換えても構わない。
+</pre>
+
+<UL>
+  <LI> Data 1: <A href="cos_n32_lambda8.dat">余弦関数(32点、4周期分、始点と終点の重複なし)</A>
+  <LI> Data 2: <A href="sin_n32_lambda8.dat">正弦関数(32点、4周期分、始点と終点の重複なし)</A>
+  <LI> Data 3: <A href="cos_n32_lambda8_dup.dat">余弦関数(33点、4周期分、始点と終点の重複あり)</A>
+</UL>
+
+<pre>
+[ファイル形式]
+  各行は空白で区切られた三つのデータ(x_n,Re{f_n},Im{f_n})から構成されており、
+  行番号がデータの番号 n に相当する。
+  行頭に # がついている行はコメントとみなす。(削除可)
+  改行コードは &lt;LF&gt;(ラインフィード)を用いている。
+</pre>
+
+<H2>(2) 逆DFT</H2>
+<pre>
+  上記の Data 2 に関する DFTの結果を、逆フーリエ変換をせよ。
+   (データ点数はオリジナルのデータと同じ32点とする)
+</pre>
+
+<H2>(3) DFTを用いた補間</H2>
+<pre>
+  上記の Data 2 に DFT の結果を、逆フーリエ変換により補間せよ。
+  補間後の実空間のデータの点数は 128点(オリジナルの 4倍)とする。
+  補間にあたりサンプリング定理を考慮して、適切な F_m の m の範囲に留意すること。
+</pre>
+
+
+
+
+<PRE>
+[補足]
+   (1) フーリエ変換のプログラムは自作すること。
+   (2) レポートには、結果の図のみではなく、
+       数式等を利用してどのように計算したのかも記述し、
+       さらに、結果に対する考察も示すこと
+   (3) フーリエ変換のプログラムも提出のこと
+       (言語は Fortran, C, Mathmatica 等、容易に構造が判るものであれば可)
+   (4) 完成していなくても締切時に提出すること(未完成の状態で採点します)
+
+</PRE>
+<HR>
+<PRE>
+ created by <EM>txt2html.pl</EM>(1.01)
+</PRE>
+<ADDRESS>
+  <A HREF="mailto:tom@qe.eng.hokudai.ac.jp">
+    tom@qe.eng.hokudai.ac.jp
+  </A>
+  (Satoshi Tomioka)
+</ADDRESS>
+</BODY>
+</HTML>
